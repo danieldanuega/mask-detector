@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/home/daniel/Developer/mask-detector/env/bin/python3",
+    "python.pythonPath": "/home/pi/.virtualenvs/mask/bin/python",
     "git.ignoreLimitWarning": true
 }
