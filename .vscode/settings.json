@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "env/bin/python",
+    "python.pythonPath": "/home/pi/.virtualenvs/mask/bin/python",
     "git.ignoreLimitWarning": true
 }
