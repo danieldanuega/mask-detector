@@ -136,8 +136,10 @@ input_std = 127.5
 frame_rate_calc = 1
 freq = cv2.getTickFrequency()
 
-# Initialize video stream
-videostream = VideoStream(resolution=(imW, imH), framerate=30, usePiCamera=True).start()
+# Initialize video stream, usePiCamera=True if using Raspberry Pi Camera
+videostream = VideoStream(
+    resolution=(imW, imH), framerate=30, usePiCamera=False
+).start()
 time.sleep(1)
 
 # for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=True):
@@ -186,12 +188,11 @@ while True:
             ymax = int(min(imH, (boxes[i][2] * imH)))
             xmax = int(min(imW, (boxes[i][3] * imW)))
 
-            cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), (10, 255, 0), 2)
-
             # Draw label
             object_name = labels[
                 int(classes[i])
             ]  # Look up object name from "labels" array using class index
+            face_box_color = (0, 10, 255) if "bare" else (10, 255, 0)
             label = "%s: %d%%" % (
                 object_name,
                 int(scores[i] * 100),
@@ -202,6 +203,9 @@ while True:
             label_ymin = max(
                 ymin, labelSize[1] + 10
             )  # Make sure not to draw label too close to top of window
+            cv2.rectangle(
+                frame, (xmin, ymin), (xmax, ymax), face_box_color, 2
+            )  # Draw box on face
             cv2.rectangle(
                 frame,
                 (xmin, label_ymin - labelSize[1] - 10),
