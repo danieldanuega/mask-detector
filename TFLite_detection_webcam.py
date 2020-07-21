@@ -50,7 +50,7 @@ parser.add_argument(
 parser.add_argument(
     "--resolution",
     help="Desired webcam resolution in WxH. If the webcam does not support the resolution entered, errors may occur.",
-    default="1280x720",
+    default="640x480",
 )
 parser.add_argument(
     "--edgetpu",
@@ -138,7 +138,7 @@ freq = cv2.getTickFrequency()
 
 # Initialize video stream, usePiCamera=True if using Raspberry Pi Camera
 videostream = VideoStream(
-    resolution=(imW, imH), framerate=30, usePiCamera=False
+    resolution=(imW,imH), framerate=30, usePiCamera=False
 ).start()
 time.sleep(1)
 
@@ -192,7 +192,7 @@ while True:
             object_name = labels[
                 int(classes[i])
             ]  # Look up object name from "labels" array using class index
-            face_box_color = (0, 10, 255) if "bare" else (10, 255, 0)
+            face_box_color = (0, 10, 255) if object_name == "bare" else (10, 255, 0)
             label = "%s: %d%%" % (
                 object_name,
                 int(scores[i] * 100),
