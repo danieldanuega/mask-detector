@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "env/bin/python",
+    "python.pythonPath": "/Users/daniel/Developer/AnacondaProjects/mask-detector/env/bin/python3",
     "git.ignoreLimitWarning": true
 }
