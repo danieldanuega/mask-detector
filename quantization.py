@@ -32,6 +32,7 @@ script = [
     "--inference_type=QUANTIZED_UINT8",
     "--std_dev_values=128",
     "--mean_values=128",
+    "--change_concat_input_ranges=false",
     "--allow_custom_ops",
 ]
 

@@ -19,9 +19,9 @@ pathspec==0.8.0
 protobuf==3.12.2
 regex==2020.7.14
 six==1.15.0
-tensorboard==1.14
-tensorflow-gpu==1.15.2
-tensorflow-estimator==1.14
+tensorboard==1.11
+tensorflow-gpu==1.11
+tensorflow-estimator==1.11
 termcolor==1.1.0
 toml==0.10.1
 typed-ast==1.4.1
