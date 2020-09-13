@@ -14,6 +14,10 @@ This repo use the TFRecord dataset (https://drive.google.com/drive/folders/1KYTP
 
 This model is trained by using the tutorial given by Coral team, in this case using docker approach. You can see the tutorial at Coral website https://www.coral.ai/docs/edgetpu/retrain-detection/. Please read carefully to understand whats going on.
 
+1. Download the model and the dataset
+2. replace pipeline.config at ssd_mobilexxx with our pipeline.config
+3. replace the constants.sh in container with ours
+
 ## Train
 
 The training process use the `retrain_detection_model.sh` that come with the docker container and is modified by me for the file locations purpose.
