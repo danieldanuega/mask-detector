@@ -20,7 +20,7 @@ This model is trained by using the tutorial given by Coral team, in this case us
 
 ## Train
 
-The training process use the `constants.sh` that come with the docker container and is modified by me for the file locations purpose.
+The training process use the `constants.sh` that have been replaced with ours.
 
 ### Note
 
